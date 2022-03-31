@@ -1,1 +1,1 @@
-web: python core/manage.py runserver
+web: gunicorn core.wsgi
