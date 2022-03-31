@@ -147,11 +147,11 @@ def get_video_and_predict(video_path):
     label_map = dict(zip(label_map.values(), label_map.keys()))
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    config = TransformerConfig(size="large", max_position_embeddings=256)
+    config = TransformerConfig(size="small", max_position_embeddings=256)
     model = Transformer(config=config, n_classes=50)
     model = model.to(device)
 
-    pretrained_model_name = "D:/final year project/SLR/experimental_trained_models/transformer.pth"
+    pretrained_model_name = "SLRA/trained_models/transformer.pth"
 
     ckpt = torch.load(pretrained_model_name,map_location=torch.device('cpu'))
     model.load_state_dict(ckpt["model"])
