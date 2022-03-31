@@ -9,3 +9,4 @@ django
 gunicorn
 django-heroku
 opencv-python-headless==4.2.0.32
+xgboost
