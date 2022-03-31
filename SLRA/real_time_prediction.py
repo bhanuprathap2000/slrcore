@@ -150,8 +150,10 @@ def get_video_and_predict(video_path):
     config = TransformerConfig(size="large", max_position_embeddings=256)
     model = Transformer(config=config, n_classes=50)
     model = model.to(device)
+    link="https://dl.dropboxusercontent.com/s/9e0sqm2077epi8i/transformer.pth"
 
     pretrained_model_name = "SLRA/trained_models/transformer.pth"
+    torch.hub.download_url_to_file(link,"/content/drive/MyDrive/INCLUDE/test.pth",pretrained_model_name, progress=True)
 
     ckpt = torch.load(pretrained_model_name,map_location=torch.device('cpu'))
     model.load_state_dict(ckpt["model"])
