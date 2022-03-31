@@ -8,3 +8,4 @@ pandas
 django
 gunicorn
 django-heroku
+opencv-python
